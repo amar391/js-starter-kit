@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "description": "JavaScript Development Environment",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "prestart": "node buildScripts/startMessage.js",
+    "start": "npm-run-all --parallel open:src",
+    "open:src": "node buildScripts/srcServer.js",
+    "localtunnel": "lt --port 3000",
+    "share": "npm-run-all --parallel open:src localtunnel"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/amar391/js-starter-kit.git"
